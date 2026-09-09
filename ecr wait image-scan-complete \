@@ -1,0 +1,1407 @@
+{
+    "imageScanFindings": {
+        "findings": [
+            {
+                "name": "CVE-2026-53910",
+                "description": "diff3 tool from GNU diffutils is vulnerable to a heap‑based buffer overflow due to multiple signed integer overflows in line‑mapping calculations. Incorrect arithmetic in mapping line ranges can result in corrupted values being used for memory allocation and loop bounds. When processing crafted diff output, these overflows may cause the application to allocate insufficient memory and subsequently perform out‑of‑bounds writes during internal processing.  An attacker who can control the output of the diff program used by diff3 (e.g. via --diff-program pointing to a malicious script) can trigger out-of-bounds writes, resulting in a crash and potentially remote code execution depending on the environment. This issue has been fixed in commit 9ff04d5b84743e331e80b589335a52c5480d1815  NOTE: The project maintainers claim that this is not a security issue. They state that the worst outcome this issue can cause is a crash of diff and that it cannot be used to escalate privileges.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-53910",
+                "severity": "LOW",
+                "attributes": [
+                    {
+                        "key": "CVSS4_SCORE",
+                        "value": "2.1"
+                    },
+                    {
+                        "key": "CVSS4_VECTOR",
+                        "value": "CVSS:4.0/AV:L/AC:L/AT:P/PR:N/UI:N/VC:N/VI:L/VA:L/SC:L/SI:L/SA:L/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "3.12-1"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "diffutils"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-6791",
+                "description": "When expanding paths that begin with a tilde (~) followed by a username, the internal parse_tilde function extracts the username to determine the user's home directory. The implementation allocates memory for this username directly on the stack using the strndupa macro. Because the size of this allocation was determined by the length of the user-supplied input without any bounds checks, passing an excessively long username e.g. thousands of characters, forces the thread to exhaust its stack space. Thus if an application passes untrusted, attacker-controlled input to the wordexp function, an attacker can trigger a stack clash.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-6791",
+                "severity": "MEDIUM",
+                "attributes": [
+                    {
+                        "key": "CVSS4_SCORE",
+                        "value": "6.6"
+                    },
+                    {
+                        "key": "CVSS4_VECTOR",
+                        "value": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:L/VI:L/VA:H/SC:N/SI:L/SA:H/E:U/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.43-2ubuntu2.3"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libc-bin"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-6791",
+                "description": "When expanding paths that begin with a tilde (~) followed by a username, the internal parse_tilde function extracts the username to determine the user's home directory. The implementation allocates memory for this username directly on the stack using the strndupa macro. Because the size of this allocation was determined by the length of the user-supplied input without any bounds checks, passing an excessively long username e.g. thousands of characters, forces the thread to exhaust its stack space. Thus if an application passes untrusted, attacker-controlled input to the wordexp function, an attacker can trigger a stack clash.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-6791",
+                "severity": "MEDIUM",
+                "attributes": [
+                    {
+                        "key": "CVSS4_SCORE",
+                        "value": "6.6"
+                    },
+                    {
+                        "key": "CVSS4_VECTOR",
+                        "value": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:L/VI:L/VA:H/SC:N/SI:L/SA:H/E:U/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.43-2ubuntu2.3"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libc6"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-6791",
+                "description": "When expanding paths that begin with a tilde (~) followed by a username, the internal parse_tilde function extracts the username to determine the user's home directory. The implementation allocates memory for this username directly on the stack using the strndupa macro. Because the size of this allocation was determined by the length of the user-supplied input without any bounds checks, passing an excessively long username e.g. thousands of characters, forces the thread to exhaust its stack space. Thus if an application passes untrusted, attacker-controlled input to the wordexp function, an attacker can trigger a stack clash.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-6791",
+                "severity": "MEDIUM",
+                "attributes": [
+                    {
+                        "key": "CVSS4_SCORE",
+                        "value": "6.6"
+                    },
+                    {
+                        "key": "CVSS4_VECTOR",
+                        "value": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:L/VI:L/VA:H/SC:N/SI:L/SA:H/E:U/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.43-2ubuntu2.3"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "glibc"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-54874",
+                "description": "Issue summary: Receiving a DTLS record for a future epoch while a handshake is in progress causes OpenSSL to buffer far more memory than the record itself requires. Impact summary: A peer can use a small amount of network traffic to make an OpenSSL DTLS endpoint retain a disproportionately large amount of memory, which may lead to a Denial of Service. CWE: CWE-405: Asymmetric Resource Consumption (Amplification) Description: While a DTLS handshake is in progress, a peer may legitimately have already moved on to the next epoch (for example, having sent its ChangeCipherSpec and Finished messages) before the local endpoint has processed the same transition, typically because of reordering on the underlying UDP transport. OpenSSL buffers such early records so that they can be processed once the local endpoint catches up. Buffering a record currently retains the entire read buffer it arrived in, which is sized to hold the largest possible DTLS record (around 16 kilobytes), rather than just the bytes that make up the record itself. Up to 100 such records may be buffered per connection. As a result, a peer that sends a stream of small forged records claiming to belong to the next epoch can cause an OpenSSL DTLS endpoint to retain around 1.7 megabytes of memory, despite sending only a small fraction of that amount of data over the network. An attacker therefore gains a memory amplification factor of around 1200, and can multiply the effect across as many associations as it is able to open, making this a remote memory exhaustion Denial of Service risk for DTLS servers. Since the memory retained per connection remains bounded, and any limit an application already places on the number of concurrent associations also bounds the total exposure, this issue has been assessed as Low severity. FIPS impact: no No FIPS modules are affected by this issue as the affected code is outside the OpenSSL FIPS module boundary. OpenSSL 4.0, 3.6, 3.5, 3.4, 3.0, 1.1.1 and 1.0.2 are vulnerable to this issue. OpenSSL 4.0 users should upgrade to OpenSSL 4.0.2. OpenSSL 3.6 users should upgrade to OpenSSL 3.6.4. OpenSSL 3.5 users should upgrade to OpenSSL 3.5.8. OpenSSL 3.4 users should upgrade to OpenSSL 3.4.7. OpenSSL 3.0 users should upgrade to OpenSSL 3.0.22. Premium support customers only: OpenSSL 1.1.1 users should upgrade to OpenSSL 1.1.1zi OpenSSL 1.0.2 users should upgrade to OpenSSL 1.0.2zr This issue was reported on 18 May 2026 by Amazon Web Services. The fix has been developed by Matt Caswell. -- cut (non-publishing metadata for internal use) -- Reported by: Amazon Web Services Fixed by: Matt Caswell",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-54874",
+                "severity": "HIGH",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "7.5"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "3.5.5-1ubuntu3.3"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libssl3t64"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-54874",
+                "description": "Issue summary: Receiving a DTLS record for a future epoch while a handshake is in progress causes OpenSSL to buffer far more memory than the record itself requires. Impact summary: A peer can use a small amount of network traffic to make an OpenSSL DTLS endpoint retain a disproportionately large amount of memory, which may lead to a Denial of Service. CWE: CWE-405: Asymmetric Resource Consumption (Amplification) Description: While a DTLS handshake is in progress, a peer may legitimately have already moved on to the next epoch (for example, having sent its ChangeCipherSpec and Finished messages) before the local endpoint has processed the same transition, typically because of reordering on the underlying UDP transport. OpenSSL buffers such early records so that they can be processed once the local endpoint catches up. Buffering a record currently retains the entire read buffer it arrived in, which is sized to hold the largest possible DTLS record (around 16 kilobytes), rather than just the bytes that make up the record itself. Up to 100 such records may be buffered per connection. As a result, a peer that sends a stream of small forged records claiming to belong to the next epoch can cause an OpenSSL DTLS endpoint to retain around 1.7 megabytes of memory, despite sending only a small fraction of that amount of data over the network. An attacker therefore gains a memory amplification factor of around 1200, and can multiply the effect across as many associations as it is able to open, making this a remote memory exhaustion Denial of Service risk for DTLS servers. Since the memory retained per connection remains bounded, and any limit an application already places on the number of concurrent associations also bounds the total exposure, this issue has been assessed as Low severity. FIPS impact: no No FIPS modules are affected by this issue as the affected code is outside the OpenSSL FIPS module boundary. OpenSSL 4.0, 3.6, 3.5, 3.4, 3.0, 1.1.1 and 1.0.2 are vulnerable to this issue. OpenSSL 4.0 users should upgrade to OpenSSL 4.0.2. OpenSSL 3.6 users should upgrade to OpenSSL 3.6.4. OpenSSL 3.5 users should upgrade to OpenSSL 3.5.8. OpenSSL 3.4 users should upgrade to OpenSSL 3.4.7. OpenSSL 3.0 users should upgrade to OpenSSL 3.0.22. Premium support customers only: OpenSSL 1.1.1 users should upgrade to OpenSSL 1.1.1zi OpenSSL 1.0.2 users should upgrade to OpenSSL 1.0.2zr This issue was reported on 18 May 2026 by Amazon Web Services. The fix has been developed by Matt Caswell. -- cut (non-publishing metadata for internal use) -- Reported by: Amazon Web Services Fixed by: Matt Caswell",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-54874",
+                "severity": "HIGH",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "7.5"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "3.5.5-1ubuntu3.3"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "openssl"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-56391",
+                "description": "GNU coreutils uniq is vulnerable to an out‑of‑bounds read due to incorrect handling of multibyte input when the -w (--check-chars) option is used. The find_field() function miscalculates the byte length of characters by repeatedly processing a fixed pointer instead of advancing through the input, resulting in an inflated length value. This incorrect length is later used in a memcmp operation, causing reads beyond the allocated buffer when processing crafted multibyte input. When running GNU coreutils uniq with attacker-provided arguments, this behavior leads to a crash and potential adjacent heap memory exposure. This issue has been fixed in the commit d64e35a8a4c0e4608321433e0d84d917e4e36371.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-56391",
+                "severity": "MEDIUM",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "6.1"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:H"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "9.7-3ubuntu2"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "coreutils"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-56391",
+                "description": "GNU coreutils uniq is vulnerable to an out‑of‑bounds read due to incorrect handling of multibyte input when the -w (--check-chars) option is used. The find_field() function miscalculates the byte length of characters by repeatedly processing a fixed pointer instead of advancing through the input, resulting in an inflated length value. This incorrect length is later used in a memcmp operation, causing reads beyond the allocated buffer when processing crafted multibyte input. When running GNU coreutils uniq with attacker-provided arguments, this behavior leads to a crash and potential adjacent heap memory exposure. This issue has been fixed in the commit d64e35a8a4c0e4608321433e0d84d917e4e36371.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-56391",
+                "severity": "MEDIUM",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "6.1"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:H"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "9.7-3ubuntu2"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "gnu-coreutils"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-56391",
+                "description": "GNU coreutils uniq is vulnerable to an out‑of‑bounds read due to incorrect handling of multibyte input when the -w (--check-chars) option is used. The find_field() function miscalculates the byte length of characters by repeatedly processing a fixed pointer instead of advancing through the input, resulting in an inflated length value. This incorrect length is later used in a memcmp operation, causing reads beyond the allocated buffer when processing crafted multibyte input. When running GNU coreutils uniq with attacker-provided arguments, this behavior leads to a crash and potential adjacent heap memory exposure. This issue has been fixed in the commit d64e35a8a4c0e4608321433e0d84d917e4e36371.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-56391",
+                "severity": "MEDIUM",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "6.1"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:H"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "0.0.0~ubuntu25"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "coreutils"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-27171",
+                "description": "zlib before 1.3.2 allows CPU consumption via crc32_combine64 and crc32_combine_gen64 because x2nmodp can do right shifts within a loop that has no termination condition.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-27171",
+                "severity": "LOW",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "2.9"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "1.3.dfsg+really1.3.1-1ubuntu3"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "zlib1g"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-27171",
+                "description": "zlib before 1.3.2 allows CPU consumption via crc32_combine64 and crc32_combine_gen64 because x2nmodp can do right shifts within a loop that has no termination condition.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-27171",
+                "severity": "LOW",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "2.9"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "1.3.dfsg+really1.3.1-1ubuntu3"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "zlib"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-66032",
+                "description": "libssh2 through 1.11.1, fixed in commit 5e47761, contains a double-free vulnerability in the sftp_open() function in src/sftp.c that allows a malicious SSH server to corrupt the heap of any authenticated client opening an SFTP session. When a server responds to SSH_FXP_OPEN with SSH_FXP_STATUS containing FX_OK, the response data buffer is freed, and if a subsequent sftp_packet_require() call returns a specific error such as LIBSSH2_ERROR_CHANNEL_PACKET_EXCEEDED, the same pointer is freed a second time, enabling tcache dup conditions on glibc systems that allow overlapping allocations and function pointer overwrites.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-66032",
+                "severity": "HIGH",
+                "attributes": [
+                    {
+                        "key": "CVSS4_SCORE",
+                        "value": "8.7"
+                    },
+                    {
+                        "key": "CVSS4_VECTOR",
+                        "value": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "1.11.1-1ubuntu0.26.04.3"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libssh2-1t64"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-66032",
+                "description": "libssh2 through 1.11.1, fixed in commit 5e47761, contains a double-free vulnerability in the sftp_open() function in src/sftp.c that allows a malicious SSH server to corrupt the heap of any authenticated client opening an SFTP session. When a server responds to SSH_FXP_OPEN with SSH_FXP_STATUS containing FX_OK, the response data buffer is freed, and if a subsequent sftp_packet_require() call returns a specific error such as LIBSSH2_ERROR_CHANNEL_PACKET_EXCEEDED, the same pointer is freed a second time, enabling tcache dup conditions on glibc systems that allow overlapping allocations and function pointer overwrites.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-66032",
+                "severity": "HIGH",
+                "attributes": [
+                    {
+                        "key": "CVSS4_SCORE",
+                        "value": "8.7"
+                    },
+                    {
+                        "key": "CVSS4_VECTOR",
+                        "value": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "1.11.1-1ubuntu0.26.04.3"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libssh2"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-57062",
+                "description": "CMS (Cryptographic Message Syntax) parsing in gpgsm in GnuPG through 2.5.20 mishandles the CMS format for AES-GCM because aes-ICVlen is supposed to be 12 bytes but 4 bytes is accepted. NOTE: this is related to CVE-2026-34182.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-57062",
+                "severity": "LOW",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "2.9"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.4.8-4ubuntu3"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "gnupg2"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-57062",
+                "description": "CMS (Cryptographic Message Syntax) parsing in gpgsm in GnuPG through 2.5.20 mishandles the CMS format for AES-GCM because aes-ICVlen is supposed to be 12 bytes but 4 bytes is accepted. NOTE: this is related to CVE-2026-34182.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-57062",
+                "severity": "LOW",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "2.9"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.4.8-4ubuntu3"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "gpgsm"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-3184",
+                "description": "A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-3184",
+                "severity": "LOW",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "3.7"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.41.3-3ubuntu2"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libmount1"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-3184",
+                "description": "A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-3184",
+                "severity": "LOW",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "3.7"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.41.3-3ubuntu2"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libsmartcols1"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-3184",
+                "description": "A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-3184",
+                "severity": "LOW",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "3.7"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.41.3-3ubuntu2"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libblkid1"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-3184",
+                "description": "A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-3184",
+                "severity": "LOW",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "3.7"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.41.3-3ubuntu2"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "util-linux"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-3184",
+                "description": "A flaw was found in util-linux. Improper hostname canonicalization in the `login(1)` utility, when invoked with the `-h` option, can modify the supplied remote hostname before setting `PAM_RHOST`. A remote attacker could exploit this by providing a specially crafted hostname, potentially bypassing host-based Pluggable Authentication Modules (PAM) access control rules that rely on fully qualified domain names. This could lead to unauthorized access.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-3184",
+                "severity": "LOW",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "3.7"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.41.3-3ubuntu2"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libuuid1"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-53615",
+                "description": "This vulnerability has been reserved by a numbering authority and is pending a detailed description. When details are published, this description will be updated accordingly. In the meantime, see associated references (if available) for more details.",
+                "uri": "https://explore.alas.aws.amazon.com/cve/json/v1/CVE-2026-53615.json",
+                "severity": "HIGH",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "8.0"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:H"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.41.3-3ubuntu2"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libmount1"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-53615",
+                "description": "This vulnerability has been reserved by a numbering authority and is pending a detailed description. When details are published, this description will be updated accordingly. In the meantime, see associated references (if available) for more details.",
+                "uri": "https://explore.alas.aws.amazon.com/cve/json/v1/CVE-2026-53615.json",
+                "severity": "HIGH",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "8.0"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:H"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.41.3-3ubuntu2"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libsmartcols1"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-53615",
+                "description": "This vulnerability has been reserved by a numbering authority and is pending a detailed description. When details are published, this description will be updated accordingly. In the meantime, see associated references (if available) for more details.",
+                "uri": "https://explore.alas.aws.amazon.com/cve/json/v1/CVE-2026-53615.json",
+                "severity": "HIGH",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "8.0"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:H"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.41.3-3ubuntu2"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libblkid1"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-53615",
+                "description": "This vulnerability has been reserved by a numbering authority and is pending a detailed description. When details are published, this description will be updated accordingly. In the meantime, see associated references (if available) for more details.",
+                "uri": "https://explore.alas.aws.amazon.com/cve/json/v1/CVE-2026-53615.json",
+                "severity": "HIGH",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "8.0"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:H"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.41.3-3ubuntu2"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "util-linux"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-53615",
+                "description": "This vulnerability has been reserved by a numbering authority and is pending a detailed description. When details are published, this description will be updated accordingly. In the meantime, see associated references (if available) for more details.",
+                "uri": "https://explore.alas.aws.amazon.com/cve/json/v1/CVE-2026-53615.json",
+                "severity": "HIGH",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "8.0"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:H"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.41.3-3ubuntu2"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libuuid1"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-14456",
+                "description": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) processes valid QUIC Initial packets for unknown destination connection IDs, it can allocate and queue new incoming channels without enforcing any limit. Impact summary: A remote peer that can make many Initial packets reach the server listener faster than the application accepts connections, can cause the memory allocated to store the per-channel state to grow without any limits, potentially making the QUIC listener unavailable and causing Denial of Service. CWE: CWE-770: Allocation of Resources Without Limits or Throttling Description: The function that handles inbound QUIC packets uses Connection-Id from the packet header to find an existing connection (QUIC channel). If no existing connection is found and the packet type is INITIAL, the function treats the packet as a new connection. It allocates a new channel object and inserts it into a queue where it waits to be accepted by the local application with SSL_accept(3ossl). The memory occupied by these initial channel objects may grow without bounds if the application is not able to call SSL_accept() frequently enough to serve these inbound connection requests. The issue is present since OpenSSL 3.5 when the QUIC server implementation was added. The fix introduces a limit for pending connections. The default limit is set to 256 pending connections (waiting to be accepted by the local application). Applications may change the default by calling SSL_set_value_uint(3ossl). FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-14456",
+                "severity": "HIGH",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "7.5"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "3.5.5-1ubuntu3.3"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libssl3t64"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-14456",
+                "description": "Issue summary: When an OpenSSL QUIC server (Listener SSL object) processes valid QUIC Initial packets for unknown destination connection IDs, it can allocate and queue new incoming channels without enforcing any limit. Impact summary: A remote peer that can make many Initial packets reach the server listener faster than the application accepts connections, can cause the memory allocated to store the per-channel state to grow without any limits, potentially making the QUIC listener unavailable and causing Denial of Service. CWE: CWE-770: Allocation of Resources Without Limits or Throttling Description: The function that handles inbound QUIC packets uses Connection-Id from the packet header to find an existing connection (QUIC channel). If no existing connection is found and the packet type is INITIAL, the function treats the packet as a new connection. It allocates a new channel object and inserts it into a queue where it waits to be accepted by the local application with SSL_accept(3ossl). The memory occupied by these initial channel objects may grow without bounds if the application is not able to call SSL_accept() frequently enough to serve these inbound connection requests. The issue is present since OpenSSL 3.5 when the QUIC server implementation was added. The fix introduces a limit for pending connections. The default limit is set to 256 pending connections (waiting to be accepted by the local application). Applications may change the default by calling SSL_set_value_uint(3ossl). FIPS impact: no The FIPS module is not affected as the QUIC implementation is outside of the OpenSSL FIPS module boundary.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-14456",
+                "severity": "HIGH",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "7.5"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "3.5.5-1ubuntu3.3"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "openssl"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-63076",
+                "description": "Issue summary: OpenSSL CMP password based protection verification only checks whether the protectionAlg parameter was not NULL and not its ASN.1 type, before treating it as a PBMParameter. A crafted message can contain a parameter of a different type, which is then dereferenced as an invalid pointer. Impact summary: A remote, unauthenticated attacker can crash an application acting as a CMP server that accepts PBM-protected messages, or a CMP client talking to a malicious or intercepted CMP server, resulting in a Denial of Service. CWE: CWE-476: NULL Pointer Dereference Description: When verifying the password-based MAC protection of a CMP message, OpenSSL library reads the protectionAlg algorithm parameter with X509_ALGOR_get0(), which returns both the parameter type and its value pointer. The value is then cast to an ASN1_STRING and treated as the expected PBMParameter after only checking that pointer is not NULL. The parameter type returned by X509_ALGOR_get0() was never consulted. This happens during protection verification, before any MAC is computed, so no knowledge of the PBM shared secret is required; the only precondition is that PBM verification is reachable. On the server side this is reached from OSSL_CMP_SRV_process_request() for any application that stands up a CMP server accepting PBM-protected messages, and on the client side from CMP response validation against a malicious or on-path (MITM) server. The reliable consequence is a denial of service; there is no memory disclosure, no controlled memory write, and no path to code execution. CMP is a specialized feature that an application must explicitly enable. FIPS impact: no As the CMP code lives outside the FIPS module boundary, no FIPS modules are affected by this CVE.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-63076",
+                "severity": "HIGH",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "7.5"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "3.5.5-1ubuntu3.3"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libssl3t64"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-63076",
+                "description": "Issue summary: OpenSSL CMP password based protection verification only checks whether the protectionAlg parameter was not NULL and not its ASN.1 type, before treating it as a PBMParameter. A crafted message can contain a parameter of a different type, which is then dereferenced as an invalid pointer. Impact summary: A remote, unauthenticated attacker can crash an application acting as a CMP server that accepts PBM-protected messages, or a CMP client talking to a malicious or intercepted CMP server, resulting in a Denial of Service. CWE: CWE-476: NULL Pointer Dereference Description: When verifying the password-based MAC protection of a CMP message, OpenSSL library reads the protectionAlg algorithm parameter with X509_ALGOR_get0(), which returns both the parameter type and its value pointer. The value is then cast to an ASN1_STRING and treated as the expected PBMParameter after only checking that pointer is not NULL. The parameter type returned by X509_ALGOR_get0() was never consulted. This happens during protection verification, before any MAC is computed, so no knowledge of the PBM shared secret is required; the only precondition is that PBM verification is reachable. On the server side this is reached from OSSL_CMP_SRV_process_request() for any application that stands up a CMP server accepting PBM-protected messages, and on the client side from CMP response validation against a malicious or on-path (MITM) server. The reliable consequence is a denial of service; there is no memory disclosure, no controlled memory write, and no path to code execution. CMP is a specialized feature that an application must explicitly enable. FIPS impact: no As the CMP code lives outside the FIPS module boundary, no FIPS modules are affected by this CVE.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-63076",
+                "severity": "HIGH",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "7.5"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "3.5.5-1ubuntu3.3"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "openssl"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-54371",
+                "description": "attr before version 2.6.0 contains a symlink traversal vulnerability in the getfattr and setfattr utilities that allows local attackers to escalate privileges by replacing a pathname component with a symbolic link during directory hierarchy traversal. Attackers who control a pathname component can redirect getfattr and setfattr operations to arbitrary files by substituting a symlink, leading to local privilege escalation when getfattr or setfattr is invoked by a privileged process over an attacker-controlled path.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-54371",
+                "severity": "HIGH",
+                "attributes": [
+                    {
+                        "key": "CVSS4_SCORE",
+                        "value": "8.4"
+                    },
+                    {
+                        "key": "CVSS4_VECTOR",
+                        "value": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.5.2-4"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libattr1"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-54371",
+                "description": "attr before version 2.6.0 contains a symlink traversal vulnerability in the getfattr and setfattr utilities that allows local attackers to escalate privileges by replacing a pathname component with a symbolic link during directory hierarchy traversal. Attackers who control a pathname component can redirect getfattr and setfattr operations to arbitrary files by substituting a symlink, leading to local privilege escalation when getfattr or setfattr is invoked by a privileged process over an attacker-controlled path.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-54371",
+                "severity": "HIGH",
+                "attributes": [
+                    {
+                        "key": "CVSS4_SCORE",
+                        "value": "8.4"
+                    },
+                    {
+                        "key": "CVSS4_VECTOR",
+                        "value": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.5.2-4"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "attr"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-14457",
+                "description": "Issue summary: In a server or client configuration with RFC7250 Raw Public Keys (RPKs) enabled, and only the private key (with no associated certificate) configured locally, a NULL pointer dereference may occur when the remote peer solicits raw public keys and also sends the typically omitted \"signature_algorithms_cert\" TLS extension. Impact summary: The impact is limited to a possible Denial of Service as a result of an application abort, no data disclosure or remote command execution are possible. CWE: CWE-476: NULL Pointer Dereference Description: While a passing comment in sample code in the documentation suggests that key-only RPK configurations are supported, the best-practice RPK configuration is to always configure a corresponding certificate (possibly self-signed or signed by any convenient CA). When the private key is configured along with a matching certificate, the \"signature_algorithms_cert\" extension is handled reliably even without the fix, and peer clients or servers that don't support raw public keys may be able to complete a TLS connection by pinning or verifying the corresponding certificate or its public key. Deployments that prefer to configure just a private key with no certificate need to upgrade to an updated release as noted below. FIPS impact: no No FIPS modules are affected by this issue, as the SSL protocol implementation is outside the OpenSSL FIPS module boundary.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-14457",
+                "severity": "HIGH",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "7.5"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "3.5.5-1ubuntu3.3"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libssl3t64"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-14457",
+                "description": "Issue summary: In a server or client configuration with RFC7250 Raw Public Keys (RPKs) enabled, and only the private key (with no associated certificate) configured locally, a NULL pointer dereference may occur when the remote peer solicits raw public keys and also sends the typically omitted \"signature_algorithms_cert\" TLS extension. Impact summary: The impact is limited to a possible Denial of Service as a result of an application abort, no data disclosure or remote command execution are possible. CWE: CWE-476: NULL Pointer Dereference Description: While a passing comment in sample code in the documentation suggests that key-only RPK configurations are supported, the best-practice RPK configuration is to always configure a corresponding certificate (possibly self-signed or signed by any convenient CA). When the private key is configured along with a matching certificate, the \"signature_algorithms_cert\" extension is handled reliably even without the fix, and peer clients or servers that don't support raw public keys may be able to complete a TLS connection by pinning or verifying the corresponding certificate or its public key. Deployments that prefer to configure just a private key with no certificate need to upgrade to an updated release as noted below. FIPS impact: no No FIPS modules are affected by this issue, as the SSL protocol implementation is outside the OpenSSL FIPS module boundary.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-14457",
+                "severity": "HIGH",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "7.5"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "3.5.5-1ubuntu3.3"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "openssl"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-66035",
+                "description": "libssh2 through 1.11.1, fixed in commit 42e33d8, contains a pre-authentication heap buffer overflow vulnerability that allows a malicious SSH server to corrupt heap metadata in any connecting client by sending a packet with a packet_length smaller than the cipher's block size during Encrypt-then-MAC cipher negotiation. In the fullpacket() function in src/transport.c, the ETM path allocates a buffer of packet_length bytes but copies blocksize minus one bytes via memcpy, causing an overflow that on 32-bit glibc writes attacker-controlled bytes into an adjacent chunk's SIZE field, enabling tcache bin confusion, overlapping live objects, and function pointer overwrite during the session handshake before authentication.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-66035",
+                "severity": "HIGH",
+                "attributes": [
+                    {
+                        "key": "CVSS4_SCORE",
+                        "value": "7.7"
+                    },
+                    {
+                        "key": "CVSS4_VECTOR",
+                        "value": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "1.11.1-1ubuntu0.26.04.3"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libssh2-1t64"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-66035",
+                "description": "libssh2 through 1.11.1, fixed in commit 42e33d8, contains a pre-authentication heap buffer overflow vulnerability that allows a malicious SSH server to corrupt heap metadata in any connecting client by sending a packet with a packet_length smaller than the cipher's block size during Encrypt-then-MAC cipher negotiation. In the fullpacket() function in src/transport.c, the ETM path allocates a buffer of packet_length bytes but copies blocksize minus one bytes via memcpy, causing an overflow that on 32-bit glibc writes attacker-controlled bytes into an adjacent chunk's SIZE field, enabling tcache bin confusion, overlapping live objects, and function pointer overwrite during the session handshake before authentication.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-66035",
+                "severity": "HIGH",
+                "attributes": [
+                    {
+                        "key": "CVSS4_SCORE",
+                        "value": "7.7"
+                    },
+                    {
+                        "key": "CVSS4_VECTOR",
+                        "value": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "1.11.1-1ubuntu0.26.04.3"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libssh2"
+                    }
+                ]
+            },
+            {
+                "name": "USN-8688-2",
+                "description": "USN-8688-1 fixed a vulnerability in PAM. This update provides the corresponding fix for PAM on Ubuntu 26.04 LTS. Original advisory details: Juthawong Naisanguansee discovered that PAM incorrectly cleared failed login attempt records when certain services invoked the account phase without first performing authentication. An attacker could possibly use this issue to reset failed login counters, resulting in authentication lockout restrictions being bypassed.",
+                "uri": "https://usn.ubuntu.com/8688-2",
+                "severity": "UNDEFINED",
+                "attributes": [
+                    {
+                        "key": "package_version",
+                        "value": "1.7.0-5ubuntu3.1"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libpam0g"
+                    }
+                ]
+            },
+            {
+                "name": "USN-8688-2",
+                "description": "USN-8688-1 fixed a vulnerability in PAM. This update provides the corresponding fix for PAM on Ubuntu 26.04 LTS. Original advisory details: Juthawong Naisanguansee discovered that PAM incorrectly cleared failed login attempt records when certain services invoked the account phase without first performing authentication. An attacker could possibly use this issue to reset failed login counters, resulting in authentication lockout restrictions being bypassed.",
+                "uri": "https://usn.ubuntu.com/8688-2",
+                "severity": "UNDEFINED",
+                "attributes": [
+                    {
+                        "key": "package_version",
+                        "value": "1.7.0-5ubuntu3.1"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libpam-runtime"
+                    }
+                ]
+            },
+            {
+                "name": "USN-8688-2",
+                "description": "USN-8688-1 fixed a vulnerability in PAM. This update provides the corresponding fix for PAM on Ubuntu 26.04 LTS. Original advisory details: Juthawong Naisanguansee discovered that PAM incorrectly cleared failed login attempt records when certain services invoked the account phase without first performing authentication. An attacker could possibly use this issue to reset failed login counters, resulting in authentication lockout restrictions being bypassed.",
+                "uri": "https://usn.ubuntu.com/8688-2",
+                "severity": "UNDEFINED",
+                "attributes": [
+                    {
+                        "key": "package_version",
+                        "value": "1.7.0-5ubuntu3.1"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libpam-modules-bin"
+                    }
+                ]
+            },
+            {
+                "name": "USN-8688-2",
+                "description": "USN-8688-1 fixed a vulnerability in PAM. This update provides the corresponding fix for PAM on Ubuntu 26.04 LTS. Original advisory details: Juthawong Naisanguansee discovered that PAM incorrectly cleared failed login attempt records when certain services invoked the account phase without first performing authentication. An attacker could possibly use this issue to reset failed login counters, resulting in authentication lockout restrictions being bypassed.",
+                "uri": "https://usn.ubuntu.com/8688-2",
+                "severity": "UNDEFINED",
+                "attributes": [
+                    {
+                        "key": "package_version",
+                        "value": "1.7.0-5ubuntu3.1"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libpam-modules"
+                    }
+                ]
+            },
+            {
+                "name": "USN-8688-2",
+                "description": "USN-8688-1 fixed a vulnerability in PAM. This update provides the corresponding fix for PAM on Ubuntu 26.04 LTS. Original advisory details: Juthawong Naisanguansee discovered that PAM incorrectly cleared failed login attempt records when certain services invoked the account phase without first performing authentication. An attacker could possibly use this issue to reset failed login counters, resulting in authentication lockout restrictions being bypassed.",
+                "uri": "https://usn.ubuntu.com/8688-2",
+                "severity": "UNDEFINED",
+                "attributes": [
+                    {
+                        "key": "package_version",
+                        "value": "1.7.0-5ubuntu3.1"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "pam"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-27456",
+                "description": "util-linux is a random collection of Linux utilities. Prior to version 2.41.4, a TOCTOU (Time-of-Check-Time-of-Use) vulnerability has been identified in the SUID binary /usr/bin/mount from util-linux. The mount binary, when setting up loop devices, validates the source file path with user privileges via fork() + setuid() + realpath(), but subsequently re-canonicalizes and opens it with root privileges (euid=0) without verifying that the path has not been replaced between both operations. Neither O_NOFOLLOW, nor inode comparison, nor post-open fstat() are employed. This allows a local unprivileged user to replace the source file with a symlink pointing to any root-owned file or device during the race window, causing the SUID binary to open and mount it as root. Exploitation requires an /etc/fstab entry with user,loop options whose path points to a directory where the attacker has write permission, and that /usr/bin/mount has the SUID bit set (the default configuration on virtually all Linux distributions). The impact is unauthorized read access to root-protected files and block devices, including backup images, disk volumes, and any file containing a valid filesystem. This issue has been patched in version 2.41.4.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-27456",
+                "severity": "MEDIUM",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "4.7"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.41.3-3ubuntu2"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libmount1"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-27456",
+                "description": "util-linux is a random collection of Linux utilities. Prior to version 2.41.4, a TOCTOU (Time-of-Check-Time-of-Use) vulnerability has been identified in the SUID binary /usr/bin/mount from util-linux. The mount binary, when setting up loop devices, validates the source file path with user privileges via fork() + setuid() + realpath(), but subsequently re-canonicalizes and opens it with root privileges (euid=0) without verifying that the path has not been replaced between both operations. Neither O_NOFOLLOW, nor inode comparison, nor post-open fstat() are employed. This allows a local unprivileged user to replace the source file with a symlink pointing to any root-owned file or device during the race window, causing the SUID binary to open and mount it as root. Exploitation requires an /etc/fstab entry with user,loop options whose path points to a directory where the attacker has write permission, and that /usr/bin/mount has the SUID bit set (the default configuration on virtually all Linux distributions). The impact is unauthorized read access to root-protected files and block devices, including backup images, disk volumes, and any file containing a valid filesystem. This issue has been patched in version 2.41.4.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-27456",
+                "severity": "MEDIUM",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "4.7"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.41.3-3ubuntu2"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libsmartcols1"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-27456",
+                "description": "util-linux is a random collection of Linux utilities. Prior to version 2.41.4, a TOCTOU (Time-of-Check-Time-of-Use) vulnerability has been identified in the SUID binary /usr/bin/mount from util-linux. The mount binary, when setting up loop devices, validates the source file path with user privileges via fork() + setuid() + realpath(), but subsequently re-canonicalizes and opens it with root privileges (euid=0) without verifying that the path has not been replaced between both operations. Neither O_NOFOLLOW, nor inode comparison, nor post-open fstat() are employed. This allows a local unprivileged user to replace the source file with a symlink pointing to any root-owned file or device during the race window, causing the SUID binary to open and mount it as root. Exploitation requires an /etc/fstab entry with user,loop options whose path points to a directory where the attacker has write permission, and that /usr/bin/mount has the SUID bit set (the default configuration on virtually all Linux distributions). The impact is unauthorized read access to root-protected files and block devices, including backup images, disk volumes, and any file containing a valid filesystem. This issue has been patched in version 2.41.4.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-27456",
+                "severity": "MEDIUM",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "4.7"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.41.3-3ubuntu2"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libblkid1"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-27456",
+                "description": "util-linux is a random collection of Linux utilities. Prior to version 2.41.4, a TOCTOU (Time-of-Check-Time-of-Use) vulnerability has been identified in the SUID binary /usr/bin/mount from util-linux. The mount binary, when setting up loop devices, validates the source file path with user privileges via fork() + setuid() + realpath(), but subsequently re-canonicalizes and opens it with root privileges (euid=0) without verifying that the path has not been replaced between both operations. Neither O_NOFOLLOW, nor inode comparison, nor post-open fstat() are employed. This allows a local unprivileged user to replace the source file with a symlink pointing to any root-owned file or device during the race window, causing the SUID binary to open and mount it as root. Exploitation requires an /etc/fstab entry with user,loop options whose path points to a directory where the attacker has write permission, and that /usr/bin/mount has the SUID bit set (the default configuration on virtually all Linux distributions). The impact is unauthorized read access to root-protected files and block devices, including backup images, disk volumes, and any file containing a valid filesystem. This issue has been patched in version 2.41.4.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-27456",
+                "severity": "MEDIUM",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "4.7"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.41.3-3ubuntu2"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "util-linux"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-27456",
+                "description": "util-linux is a random collection of Linux utilities. Prior to version 2.41.4, a TOCTOU (Time-of-Check-Time-of-Use) vulnerability has been identified in the SUID binary /usr/bin/mount from util-linux. The mount binary, when setting up loop devices, validates the source file path with user privileges via fork() + setuid() + realpath(), but subsequently re-canonicalizes and opens it with root privileges (euid=0) without verifying that the path has not been replaced between both operations. Neither O_NOFOLLOW, nor inode comparison, nor post-open fstat() are employed. This allows a local unprivileged user to replace the source file with a symlink pointing to any root-owned file or device during the race window, causing the SUID binary to open and mount it as root. Exploitation requires an /etc/fstab entry with user,loop options whose path points to a directory where the attacker has write permission, and that /usr/bin/mount has the SUID bit set (the default configuration on virtually all Linux distributions). The impact is unauthorized read access to root-protected files and block devices, including backup images, disk volumes, and any file containing a valid filesystem. This issue has been patched in version 2.41.4.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-27456",
+                "severity": "MEDIUM",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "4.7"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.41.3-3ubuntu2"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libuuid1"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-15534",
+                "description": "Perl versions through 5.45.1 have out-of-bounds heap reads and writes during regular expression matching via an undersized superlinear cache in S_regmatch. The regex engine's superlinear cache holds one bit per subject position for each participating WHILEM node, so the bit count is the subject length plus one times the number of nodes. Nothing checks that product for positive overflow of the signed 32-bit count: a 286331153 byte subject matched against a pattern with 15 participating nodes stores the count as 14, leaving a two byte cache. The cache is then indexed from the real match position and node number, so reads go past the end of the allocation, and on failure CACHEsayNO sets a bit past it. A caller that matches an attacker controlled subject of this size against a pattern of this shape can crash the process or corrupt heap memory.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-15534",
+                "severity": "MEDIUM",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "5.7"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:H"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "5.40.1-7ubuntu0.1"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "perl"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-15534",
+                "description": "Perl versions through 5.45.1 have out-of-bounds heap reads and writes during regular expression matching via an undersized superlinear cache in S_regmatch. The regex engine's superlinear cache holds one bit per subject position for each participating WHILEM node, so the bit count is the subject length plus one times the number of nodes. Nothing checks that product for positive overflow of the signed 32-bit count: a 286331153 byte subject matched against a pattern with 15 participating nodes stores the count as 14, leaving a two byte cache. The cache is then indexed from the real match position and node number, so reads go past the end of the allocation, and on failure CACHEsayNO sets a bit past it. A caller that matches an attacker controlled subject of this size against a pattern of this shape can crash the process or corrupt heap memory.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-15534",
+                "severity": "MEDIUM",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "5.7"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:H"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "5.40.1-7ubuntu0.1"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "perl-base"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2025-5278",
+                "description": "A flaw was found in GNU Coreutils. The sort utility's begfield() function is vulnerable to a heap buffer under-read. The program may access memory outside the allocated buffer if a user runs a crafted command using the traditional key format. A malicious input could lead to a crash or leak sensitive data.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2025-5278",
+                "severity": "MEDIUM",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "4.4"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "9.7-3ubuntu2"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "coreutils"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2025-5278",
+                "description": "A flaw was found in GNU Coreutils. The sort utility's begfield() function is vulnerable to a heap buffer under-read. The program may access memory outside the allocated buffer if a user runs a crafted command using the traditional key format. A malicious input could lead to a crash or leak sensitive data.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2025-5278",
+                "severity": "MEDIUM",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "4.4"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "9.7-3ubuntu2"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "gnu-coreutils"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2025-5278",
+                "description": "A flaw was found in GNU Coreutils. The sort utility's begfield() function is vulnerable to a heap buffer under-read. The program may access memory outside the allocated buffer if a user runs a crafted command using the traditional key format. A malicious input could lead to a crash or leak sensitive data.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2025-5278",
+                "severity": "MEDIUM",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "4.4"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "0.0.0~ubuntu25"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "coreutils"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-75803",
+                "description": "Issue summary: ChaCha20-Poly1305 and AES-OCB decryption with an empty ciphertext can report success without verifying the supplied authentication tag when the operation is finalized by calling the EVP_Cipher() function. Impact summary: Applications calling EVP_Cipher() on an empty ciphertext and expecting the call to check the AEAD tag may accept forged messages. CWE: CWE-354 (Improper Validation of Integrity Check Value) Description: The EVP_Cipher() API call for AEAD ciphers behaves like a one shot encryption and decryption call. It also verifies the AEAD tag after the decryption operation. However for AES-OCB and ChaCha20-Poly1305 ciphers it skipped the AEAD tag verification when an empty ciphertext was passed to the function. The callers of this function might believe that a successful return indicates a valid AEAD tag for these ciphers, even when that has not truly been validated in this case. FIPS impact: no The FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are not affected by this CVE as the affected algorithms are not FIPS approved and thus not implemented in the FIPS module.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-75803",
+                "severity": "CRITICAL",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "9.1"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "3.5.5-1ubuntu3.3"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libssl3t64"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-75803",
+                "description": "Issue summary: ChaCha20-Poly1305 and AES-OCB decryption with an empty ciphertext can report success without verifying the supplied authentication tag when the operation is finalized by calling the EVP_Cipher() function. Impact summary: Applications calling EVP_Cipher() on an empty ciphertext and expecting the call to check the AEAD tag may accept forged messages. CWE: CWE-354 (Improper Validation of Integrity Check Value) Description: The EVP_Cipher() API call for AEAD ciphers behaves like a one shot encryption and decryption call. It also verifies the AEAD tag after the decryption operation. However for AES-OCB and ChaCha20-Poly1305 ciphers it skipped the AEAD tag verification when an empty ciphertext was passed to the function. The callers of this function might believe that a successful return indicates a valid AEAD tag for these ciphers, even when that has not truly been validated in this case. FIPS impact: no The FIPS modules in 4.0, 3.6, 3.5, 3.4, and 3.0 are not affected by this CVE as the affected algorithms are not FIPS approved and thus not implemented in the FIPS module.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-75803",
+                "severity": "CRITICAL",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "9.1"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "3.5.5-1ubuntu3.3"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "openssl"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-13595",
+                "description": "A flaw was found in the libblkid library of util-linux. During nested partition probing, the BSD, Minix, Solaris x86, and UnixWare partition probers cache a raw pointer to a parent partition entry in a dynamically allocated array. When subsequent partition additions cause the array to be reallocated, this pointer becomes stale, leading to a heap use-after-free read. An attacker who can present a crafted block device image (for example, via USB insertion or a loop-mounted disk image) can trigger this flaw without user interaction, as libblkid is invoked automatically by udev/udisks as root on block-device hot-plug events. This could lead to limited information disclosure or denial of service.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-13595",
+                "severity": "MEDIUM",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "5.3"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:H"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.41.3-3ubuntu2"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libmount1"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-13595",
+                "description": "A flaw was found in the libblkid library of util-linux. During nested partition probing, the BSD, Minix, Solaris x86, and UnixWare partition probers cache a raw pointer to a parent partition entry in a dynamically allocated array. When subsequent partition additions cause the array to be reallocated, this pointer becomes stale, leading to a heap use-after-free read. An attacker who can present a crafted block device image (for example, via USB insertion or a loop-mounted disk image) can trigger this flaw without user interaction, as libblkid is invoked automatically by udev/udisks as root on block-device hot-plug events. This could lead to limited information disclosure or denial of service.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-13595",
+                "severity": "MEDIUM",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "5.3"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:H"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.41.3-3ubuntu2"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libsmartcols1"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-13595",
+                "description": "A flaw was found in the libblkid library of util-linux. During nested partition probing, the BSD, Minix, Solaris x86, and UnixWare partition probers cache a raw pointer to a parent partition entry in a dynamically allocated array. When subsequent partition additions cause the array to be reallocated, this pointer becomes stale, leading to a heap use-after-free read. An attacker who can present a crafted block device image (for example, via USB insertion or a loop-mounted disk image) can trigger this flaw without user interaction, as libblkid is invoked automatically by udev/udisks as root on block-device hot-plug events. This could lead to limited information disclosure or denial of service.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-13595",
+                "severity": "MEDIUM",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "5.3"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:H"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.41.3-3ubuntu2"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libblkid1"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-13595",
+                "description": "A flaw was found in the libblkid library of util-linux. During nested partition probing, the BSD, Minix, Solaris x86, and UnixWare partition probers cache a raw pointer to a parent partition entry in a dynamically allocated array. When subsequent partition additions cause the array to be reallocated, this pointer becomes stale, leading to a heap use-after-free read. An attacker who can present a crafted block device image (for example, via USB insertion or a loop-mounted disk image) can trigger this flaw without user interaction, as libblkid is invoked automatically by udev/udisks as root on block-device hot-plug events. This could lead to limited information disclosure or denial of service.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-13595",
+                "severity": "MEDIUM",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "5.3"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:H"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.41.3-3ubuntu2"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "util-linux"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-13595",
+                "description": "A flaw was found in the libblkid library of util-linux. During nested partition probing, the BSD, Minix, Solaris x86, and UnixWare partition probers cache a raw pointer to a parent partition entry in a dynamically allocated array. When subsequent partition additions cause the array to be reallocated, this pointer becomes stale, leading to a heap use-after-free read. An attacker who can present a crafted block device image (for example, via USB insertion or a loop-mounted disk image) can trigger this flaw without user interaction, as libblkid is invoked automatically by udev/udisks as root on block-device hot-plug events. This could lead to limited information disclosure or denial of service.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-13595",
+                "severity": "MEDIUM",
+                "attributes": [
+                    {
+                        "key": "CVSS3_SCORE",
+                        "value": "5.3"
+                    },
+                    {
+                        "key": "CVSS3_VECTOR",
+                        "value": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:H"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.41.3-3ubuntu2"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libuuid1"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-6368",
+                "description": "Calling wordexp with WRDE_APPEND in the GNU C Library version 2.0 to version 2.43 can cause the interface to return invalid memory in the we_wordv member, which on subsequent calls to wordfree may abort the process.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-6368",
+                "severity": "LOW",
+                "attributes": [
+                    {
+                        "key": "CVSS4_SCORE",
+                        "value": "2.1"
+                    },
+                    {
+                        "key": "CVSS4_VECTOR",
+                        "value": "CVSS:4.0/AV:L/AC:H/AT:P/PR:N/UI:N/VC:L/VI:L/VA:L/SC:L/SI:L/SA:L/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:P/AU:Y/R:X/V:X/RE:X/U:Green"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.43-2ubuntu2.3"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libc-bin"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-6368",
+                "description": "Calling wordexp with WRDE_APPEND in the GNU C Library version 2.0 to version 2.43 can cause the interface to return invalid memory in the we_wordv member, which on subsequent calls to wordfree may abort the process.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-6368",
+                "severity": "LOW",
+                "attributes": [
+                    {
+                        "key": "CVSS4_SCORE",
+                        "value": "2.1"
+                    },
+                    {
+                        "key": "CVSS4_VECTOR",
+                        "value": "CVSS:4.0/AV:L/AC:H/AT:P/PR:N/UI:N/VC:L/VI:L/VA:L/SC:L/SI:L/SA:L/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:P/AU:Y/R:X/V:X/RE:X/U:Green"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.43-2ubuntu2.3"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "libc6"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-6368",
+                "description": "Calling wordexp with WRDE_APPEND in the GNU C Library version 2.0 to version 2.43 can cause the interface to return invalid memory in the we_wordv member, which on subsequent calls to wordfree may abort the process.",
+                "uri": "https://nvd.nist.gov/vuln/detail/CVE-2026-6368",
+                "severity": "LOW",
+                "attributes": [
+                    {
+                        "key": "CVSS4_SCORE",
+                        "value": "2.1"
+                    },
+                    {
+                        "key": "CVSS4_VECTOR",
+                        "value": "CVSS:4.0/AV:L/AC:H/AT:P/PR:N/UI:N/VC:L/VI:L/VA:L/SC:L/SI:L/SA:L/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:P/AU:Y/R:X/V:X/RE:X/U:Green"
+                    },
+                    {
+                        "key": "package_version",
+                        "value": "2.43-2ubuntu2.3"
+                    },
+                    {
+                        "key": "package_name",
+                        "value": "glibc"
+                    }
+                ]
+            },
+            {
+                "name": "CVE-2026-63073",
+                "description": "Issue summary: OpenSSL CMP response validation passed an unexpected response sender distinguished name directly as the format string to `ERR_raise_data()`. Impact summary: A malicious or intercepted CMP endpoint can crash a CMP client that enforces an expected sender or uses a pinned server certificate whose subject becomes the default expected sender. CWE: CWE-134 (Use of Externally-Controlled Format String) Description: When validating a received CMP message, ossl_cmp_msg_check_update() converts the peer-supplied sender distinguished name with X509_NAME_oneline() and passes it directly as the format argument to ERR_raise_data(). Percent characters survive the conversion, so a sender DN such as \"CN=%s%n\" reaches BIO_vsnprintf() as an attacker-controlled format string with no matching variadic arguments. This path is only reached when the caller configures an expected sender or pins a server certificate, which is the normal configuration for a CMP client validating server responses. Since the attacker controls the format string but none of the variadic arguments, such specifiers as %s and %n dereference or write through unrelated stack contents and crash the client. The reliable consequence is a denial of service, when the response comes from a malicious or intercepted CMP endpoint. There is no controlled memory write, arbitrary-address read, or reliable path to remote code execution. FIPS impact: no No FIPS modules are affected by this issue, as the CMP protocol implementation is outside the OpenSSL FIPS module boundary.",
+                "uri": 

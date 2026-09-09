@@ -43,26 +43,18 @@ pipeline {
 
             steps {
 
-                script {
-                    if (!(params.IMAGE_TAG ==~ /^[0-9]+\\.[0-9]+(\\.[0-9]+)?$/)) {
-                        error(
-                            "Invalid IMAGE_TAG: ${params.IMAGE_TAG}. " +
-                            "Use 1.0, 1.1, 1.2, etc."
-                        )
-                    }
-                }
+script {
+    def imageTag = params.IMAGE_TAG?.trim()
 
-                echo '========== DOCKER BUILD =========='
+    if (!(imageTag ==~ /^[0-9]+\.[0-9]+(\.[0-9]+)?$/)) {
+        error(
+            "Invalid IMAGE_TAG: ${imageTag}. " +
+            "Use 1.0, 1.1, 1.2, etc."
+        )
+    }
 
-                sh '''
-                    docker build \
-                      --build-arg APP_VERSION=${IMAGE_TAG} \
-                      -t ${ECR_REPOSITORY}:${IMAGE_TAG} .
-
-                    docker images ${ECR_REPOSITORY}
-                '''
-            }
-        }
+    env.IMAGE_TAG = imageTag
+}
 
         stage('ECR Login') {
             steps {

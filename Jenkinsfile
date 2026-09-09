@@ -40,29 +40,42 @@ pipeline {
         }
 
         stage('Docker Build') {
-
             steps {
 
-script {
-    def imageTag = params.IMAGE_TAG?.trim()
+                script {
+                    def imageTag = params.IMAGE_TAG?.trim()
 
-    if (!(imageTag ==~ /^[0-9]+\.[0-9]+(\.[0-9]+)?$/)) {
-        error(
-            "Invalid IMAGE_TAG: ${imageTag}. " +
-            "Use 1.0, 1.1, 1.2, etc."
-        )
-    }
+                    if (!(imageTag ==~ /^[0-9]+\.[0-9]+(\.[0-9]+)?$/)) {
+                        error "Invalid IMAGE_TAG: ${imageTag}. Use 1.0, 1.1, 1.2, etc."
+                    }
 
-    env.IMAGE_TAG = imageTag
-}
+                    env.IMAGE_TAG = imageTag
+
+                    echo "Validated IMAGE_TAG: ${env.IMAGE_TAG}"
+                }
+
+                echo '========== DOCKER BUILD =========='
+
+                sh '''
+                    docker build \
+                      --build-arg APP_VERSION=${IMAGE_TAG} \
+                      -t ${ECR_REPOSITORY}:${IMAGE_TAG} .
+
+                    echo "Local Docker image:"
+                    docker images ${ECR_REPOSITORY}
+                '''
+            }
+        }
 
         stage('ECR Login') {
             steps {
-
                 echo '========== ECR LOGIN =========='
 
                 sh '''
+                    echo "Verifying AWS identity..."
                     aws sts get-caller-identity
+
+                    echo "Logging into ECR..."
 
                     aws ecr get-login-password \
                       --region ${AWS_REGION} \
@@ -75,7 +88,6 @@ script {
 
         stage('Docker Tag') {
             steps {
-
                 echo '========== DOCKER TAG =========='
 
                 sh '''
@@ -91,12 +103,15 @@ script {
 
         stage('Docker Push') {
             steps {
-
                 echo '========== DOCKER PUSH =========='
 
                 sh '''
                     docker push \
                       ${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG}
+
+                    echo ""
+                    echo "Successfully pushed:"
+                    echo "${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG}"
                 '''
             }
         }
@@ -123,7 +138,7 @@ ${ECR_REGISTRY}/${ECR_REPOSITORY}:${params.IMAGE_TAG}
             echo """
 ===================================================
 PIPELINE FAILED
-Check the failed stage in Jenkins Console Output.
+Check Jenkins Console Output for the failed stage.
 ===================================================
 """
         }
